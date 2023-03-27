@@ -33,7 +33,7 @@ namespace BoreM_InfoTest {
                 return _boreM_lode;
             }
             set {
-                if (BoreM_voto == 110) { /*se è 110 può essere sua lode che no*/
+                if (BoreM_voto == 110) { /*se è 110 può essere sia lode che no*/
                     _boreM_lode = value;
                 } else { /*se sono qui deve per forza essere false perchè non posso prendere 109 e lode*/
                     if (value) {
