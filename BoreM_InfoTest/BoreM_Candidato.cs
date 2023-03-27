@@ -61,11 +61,11 @@ namespace BoreM_InfoTest {
             int tmpC = c.Punteggio();
             int tmpT = this.Punteggio();
             if (tmpC < tmpT) {
-                return -1;
+                return 1;
             } else if (tmpC == tmpT) {
                 return 0;
             }
-            return 1;
+            return -1;
         }
         public override int GetHashCode() => (BoreM_matricola, BoreM_nome).GetHashCode();
     }
