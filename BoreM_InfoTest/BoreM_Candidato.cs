@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BoreM_InfoTest {
-    public abstract class BoreM_Candidato {
+    public abstract class BoreM_Candidato : IEquatable<BoreM_Candidato>, IComparable<BoreM_Candidato> {
         private int _boreM_matricola;
         private string _boreM_nome;
 
@@ -42,6 +42,31 @@ namespace BoreM_InfoTest {
 
         public abstract bool IsIdoneo();
         public abstract int Punteggio();
-        
+
+        public override string ToString() {
+            return $"{BoreM_matricola}; {BoreM_nome}";
+        }
+        public bool Equals(BoreM_Candidato c) {
+            if (c == null) {
+                return false;
+            } else if (c == this) {
+                return true;
+            }
+            return (c.BoreM_matricola == this.BoreM_matricola && c.BoreM_nome == this.BoreM_nome);
+        }
+        public int CompareTo(BoreM_Candidato c) {
+            if (c == null)
+                return 1;
+
+            int tmpC = c.Punteggio();
+            int tmpT = this.Punteggio();
+            if (tmpC < tmpT) {
+                return -1;
+            } else if (tmpC == tmpT) {
+                return 0;
+            }
+            return 1;
+        }
+        public override int GetHashCode() => (BoreM_matricola, BoreM_nome).GetHashCode();
     }
 }

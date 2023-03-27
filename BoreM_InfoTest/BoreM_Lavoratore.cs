@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BoreM_InfoTest {
-    public class BoreM_Lavoratore : BoreM_Candidato {
+    public class BoreM_Lavoratore : BoreM_Candidato, IEquatable<BoreM_Lavoratore>, IComparable<BoreM_Lavoratore> {
         private byte _boreM_esperienze;
 
         public BoreM_Lavoratore() : this(0, "", 0) {
@@ -33,6 +33,16 @@ namespace BoreM_InfoTest {
 
         public override bool IsIdoneo() {
             return (Punteggio() >= 60);
+        }
+
+        public override string ToString() {
+            return $"{base.ToString()}; {BoreM_esperienze}";
+        }
+        public bool Equals(BoreM_Lavoratore l) {
+            return ((base.Equals((BoreM_Candidato)l)) && (l.BoreM_esperienze == this.BoreM_esperienze));
+        }
+        public int CompareTo(BoreM_Lavoratore l) {
+            return (base.CompareTo((BoreM_Candidato)l));
         }
     }
 }
