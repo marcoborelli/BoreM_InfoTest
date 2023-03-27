@@ -36,7 +36,7 @@ namespace BoreM_InfoTest {
         }
 
         public override string ToString() {
-            return $"{base.ToString()}; {BoreM_esperienze}";
+            return $"{base.ToString()};{BoreM_esperienze}";
         }
         public bool Equals(BoreM_Lavoratore l) {
             return ((base.Equals((BoreM_Candidato)l)) && (l.BoreM_esperienze == this.BoreM_esperienze));

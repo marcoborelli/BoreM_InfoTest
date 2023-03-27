@@ -44,7 +44,7 @@ namespace BoreM_InfoTest {
         public abstract int Punteggio();
 
         public override string ToString() {
-            return $"{BoreM_matricola}; {BoreM_nome}";
+            return $"{BoreM_matricola};{BoreM_nome}";
         }
         public bool Equals(BoreM_Candidato c) {
             if (c == null) {

@@ -61,7 +61,7 @@ namespace BoreM_InfoTest {
         }
 
         public override string ToString() {
-            return $"{base.ToString()}; {BoreM_voto}; {BoreM_lode}";
+            return $"{base.ToString()};{BoreM_voto};{BoreM_lode}";
         }
         public bool Equals(BoreM_Disoccupato d) {
             return ((base.Equals((BoreM_Candidato)d)) && (d.BoreM_voto == this.BoreM_voto) && (d.BoreM_lode == this.BoreM_lode));
